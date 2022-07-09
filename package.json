@@ -1,8 +1,14 @@
 {
-  "name": "typescript-npm-package-template",
-  "version": "0.0.0-development",
-  "description": "A template for creating npm packages using TypeScript and VSCode",
+  "name": "sfdx-auth-helper",
+  "version": "1.0.0",
+  "description": "Salesforce authentication utilities",
+  "author": {
+    "name": "Kevin Jones",
+    "email": "nawforce@gmail.com",
+    "url": "https://github.com/nawforce"
+  },
   "main": "./lib/src/index.js",
+  "license": "BSD-3-Clause",
   "files": [
     "lib/**/*"
   ],
@@ -15,36 +21,30 @@
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
     "test": "jest --coverage",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "vscode:prepublish": "npm run package",
+    "testpack": "webpack --mode production --devtool hidden-source-map",
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryansonshine/typescript-npm-package-template.git"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Ryan Sonshine",
-    "email": "ryansonshine@users.noreply.github.com",
-    "url": "https://github.com/ryansonshine"
+    "url": "git+https://github.com/apex-dev-tools/sfdx-auth-helper.git"
   },
   "engines": {
-    "node": ">=12.0"
+    "node": ">=14.0"
   },
   "keywords": [
-    "boilerplate",
-    "template",
-    "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
+    "salesforce",
+    "afdx-core"
   ],
   "bugs": {
-    "url": "https://github.com/ryansonshine/typescript-npm-package-template/issues"
+    "url": "https://github.com/apex-dev-tools/sfdx-auth-helper/issues"
   },
-  "homepage": "https://github.com/ryansonshine/typescript-npm-package-template#readme",
+  "homepage": "https://github.com/apex-dev-tools/sfdx-auth-helper#readme",
+  "dependencies": {
+    "@salesforce/core": "2.37.1",
+    "@salesforce/ts-types": "1.5.20"
+  },
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
@@ -60,11 +60,14 @@
     "husky": "^6.0.0",
     "jest": "^27.2.0",
     "lint-staged": "^10.5.4",
+    "patch-package": "^6.4.7",
     "prettier": "^2.2.1",
     "semantic-release": "^19.0.2",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   },
   "config": {
     "commitizen": {

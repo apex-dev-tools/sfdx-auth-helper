@@ -1,3 +1,4 @@
+/* 
 import { myPackage } from '../src';
 
 describe('index', () => {
@@ -11,3 +12,4 @@ describe('index', () => {
     });
   });
 });
+*/
