@@ -1,6 +1,6 @@
 {
   "name": "@apexdevtools/sfdx-auth-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Salesforce authentication utilities",
   "author": {
     "name": "Kevin Jones",
@@ -41,6 +41,9 @@
     "url": "https://github.com/apex-dev-tools/sfdx-auth-helper/issues"
   },
   "homepage": "https://github.com/apex-dev-tools/sfdx-auth-helper#readme",
+  "bundledDependencies": [
+    "@salesforce/core"
+  ],
   "dependencies": {
     "@salesforce/core": "2.37.1",
     "@salesforce/ts-types": "1.5.20",
