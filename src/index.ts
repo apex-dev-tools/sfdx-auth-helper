@@ -5,3 +5,6 @@ initCoreMessages();
 
 // Re-export @salesforce/core
 export * from '@salesforce/core/lib/exported';
+
+// Export username helper
+export { getDefaultUsername } from './Username';
