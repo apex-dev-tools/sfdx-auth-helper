@@ -22,7 +22,7 @@ jobs:
 
     - name: Build & Test
       run: |
-        npm run ci 
+        npm ci 
         npm run build
         npm run test
       
