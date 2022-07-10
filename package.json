@@ -1,5 +1,5 @@
 {
-  "name": "sfdx-auth-helper",
+  "name": "@apexdevtools/sfdx-auth-helper",
   "version": "1.0.0",
   "description": "Salesforce authentication utilities",
   "author": {
@@ -22,7 +22,6 @@
     "test:watch": "jest --watch",
     "test": "jest --coverage",
     "typecheck": "tsc --noEmit",
-    "vscode:prepublish": "npm run package",
     "testpack": "webpack --mode production --devtool hidden-source-map",
     "postinstall": "patch-package"
   },
