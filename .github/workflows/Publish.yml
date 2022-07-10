@@ -16,8 +16,8 @@ jobs:
 
       - run: |
           npm ci
-          npm build
-          npm test
+          npm run build
+          npm run test
           npm publish --access public
 
         env:

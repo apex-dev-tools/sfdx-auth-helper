@@ -25,6 +25,7 @@ This should execute without error.
 
 ### History
 
+    1.0.1 - Packaging fix
     1.0.0 - Initial version
 
 ### License
