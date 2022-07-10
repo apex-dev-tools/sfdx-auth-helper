@@ -1,6 +1,6 @@
 {
   "name": "@apexdevtools/sfdx-auth-helper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Salesforce authentication utilities",
   "author": {
     "name": "Kevin Jones",

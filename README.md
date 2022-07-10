@@ -25,6 +25,7 @@ This should execute without error.
 
 ### History
 
+    1.0.4 - Update patch for WebOAuthServer message fix
     1.0.3 - Bundle @salesforce/core
     1.0.2 - Another Packaging fix
     1.0.1 - Packaging fix
