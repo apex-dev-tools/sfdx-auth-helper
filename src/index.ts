@@ -6,8 +6,5 @@ initCoreMessages();
 // Re-export @salesforce/core
 export * from '@salesforce/core/lib/exported';
 
-// For testing support
-export { MockTestOrgData, testSetup } from '@salesforce/core/lib/testSetup';
-
 // Export username helper
 export { getDefaultUsername } from './Username';

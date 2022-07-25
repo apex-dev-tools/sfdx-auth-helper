@@ -50,6 +50,7 @@
     "patch-package": "^6.4.7"
   },
   "devDependencies": {
+    "@salesforce/ts-sinon": "1.3.21",
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
     "@types/jest": "^27.5.2",
