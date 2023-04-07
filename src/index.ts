@@ -1,10 +1,5 @@
-import { initCoreMessages } from './CoreMessages';
+/*
+ * Copyright (c) 2023 FinancialForce.com, inc. All rights reserved.
+ */
 
-// Load @salesforce/core messages so ready for use
-initCoreMessages();
-
-// Re-export @salesforce/core
-export * from '@salesforce/core/lib/exported';
-
-// Export username helper
-export { getDefaultUsername } from './Username';
+export { AuthHelper } from './authHelper';
