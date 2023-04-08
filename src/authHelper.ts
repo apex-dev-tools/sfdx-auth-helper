@@ -20,7 +20,7 @@ type RefreshTokenFn = (
 ) => unknown;
 
 // callOptions id - shown in log files
-const client = 'jsforce1';
+const client = '@apexdevtools/sfdx-auth-helper';
 
 export class AuthHelper {
   /*
@@ -79,10 +79,9 @@ export class AuthHelper {
     const configApiVersion = this.config.getPropertyValue(
       OrgConfigProperties.ORG_API_VERSION
     );
-    let version = String(configApiVersion);
-    if (!version) {
-      version = defaultApiVersion;
-    }
+    const version = configApiVersion
+      ? String(configApiVersion)
+      : defaultApiVersion;
 
     return new RawConnection(
       convertToRawOptions(authInfo, { version, callOptions: { client } })
@@ -96,8 +95,9 @@ export class AuthHelper {
     const usernameOrAlias = this.config.getPropertyValue(
       OrgConfigProperties.TARGET_ORG
     );
-
-    const username = await this.resolveUsername(String(usernameOrAlias));
+    const username = await this.resolveUsername(
+      usernameOrAlias ? String(usernameOrAlias) : undefined
+    );
 
     if (!username) {
       throw new Error('No default username found in org config');
@@ -141,20 +141,14 @@ export class AuthHelper {
     if (!usernameOrAlias) {
       return this.getDefaultUsername();
     } else {
+      // will fail later if alias was not found
       const resolvedName = await this.resolveUsername(usernameOrAlias);
-
-      if (!resolvedName) {
-        throw new Error(
-          `Could not resolve username '${usernameOrAlias}' to a known auth info`
-        );
-      }
-
-      return resolvedName;
+      return resolvedName || usernameOrAlias;
     }
   }
 
   private async resolveUsername(
-    usernameOrAlias: string
+    usernameOrAlias?: string
   ): Promise<string | undefined> {
     const info = await StateAggregator.getInstance();
     return usernameOrAlias
