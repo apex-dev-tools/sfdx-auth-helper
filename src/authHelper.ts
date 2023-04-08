@@ -68,7 +68,7 @@ export class AuthHelper {
    * Optionally specify an api version to use if none set in sf config.
    */
   public async connectJsForce(
-    usernameOrAlias = undefined,
+    usernameOrAlias?: string,
     defaultApiVersion = '57.0'
   ): Promise<RawConnection> {
     const username = await this.getValidUsername(usernameOrAlias);
@@ -118,17 +118,17 @@ export class AuthHelper {
     // we must temporarily switch to the workspace dir (if not in it already)
     // to pick up the correct local config on first try
     if (!this.config) {
-      const startDir = process.cwd();
+      const startDir = this.cwd();
 
-      if (workspacePath && workspacePath !== startDir) {
-        process.chdir(workspacePath);
+      if (workspacePath !== startDir) {
+        this.chdir(workspacePath);
       }
 
       try {
         this.config = await ConfigAggregator.create();
       } finally {
-        if (process.cwd() !== startDir) {
-          process.chdir(startDir);
+        if (this.cwd() !== startDir) {
+          this.chdir(startDir);
         }
       }
     }
@@ -160,6 +160,16 @@ export class AuthHelper {
     return usernameOrAlias
       ? info.aliases.resolveUsername(usernameOrAlias)
       : undefined;
+  }
+
+  private cwd() {
+    return process.cwd();
+  }
+
+  private chdir(path: string) {
+    if (path) {
+      process.chdir(path);
+    }
   }
 }
 
