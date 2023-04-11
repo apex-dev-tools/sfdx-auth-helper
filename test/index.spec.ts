@@ -159,7 +159,9 @@ describe('AuthHelper', () => {
 
     expect(initSpy.calledOnce).toBe(true);
     const opts = initSpy.args[0][0] || {};
-    expect(opts.callOptions).toEqual({ client: 'jsforce1' });
+    expect(opts.callOptions).toEqual({
+      client: '@apexdevtools/sfdx-auth-helper',
+    });
     expect(opts.accessToken).toMatch(testData.accessToken);
     expect(rawConn.version).toMatch('50.0');
   });
