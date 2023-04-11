@@ -50,8 +50,16 @@ To start, create an instance of the helper at the path of your sf project.
 
 ## Building
 
+This project uses the `pnpm` package manager.
+
 ```txt
   pnpm build
+```
+
+To run unit tests:
+
+```txt
+  pnpm test
 ```
 
 To test bundling using webpack:

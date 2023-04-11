@@ -9,8 +9,7 @@
     * Can also static transform a core `Connection` into a v1 `jsforce.Connection`.
     * See `README.md` for specific API details.
 * Depends on `jsforce@^1` to support legacy connection type.
-* `getDefaultUsername(workspacePath)` is now available as
-`AuthHelper.instance(workspacePath).getDefaultUsername()`.
+* `getDefaultUsername(workspacePath)` is now available as `AuthHelper.instance(workspacePath).getDefaultUsername()`.
   * Prefer use of `.connect()` or `.connectJsForce()`.
 * No longer re-exports any types from `@salesforce/core`.
 
