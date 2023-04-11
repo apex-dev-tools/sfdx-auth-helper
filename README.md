@@ -63,17 +63,6 @@ To test bundling using webpack:
 
 This should execute without error.
 
-## History
-
-```txt
-  1.0.5 - Re-export MockTestOrgData, testSetup
-  1.0.4 - Update patch for WebOAuthServer message fix
-  1.0.3 - Bundle @salesforce/core
-  1.0.2 - Another Packaging fix
-  1.0.1 - Packaging fix
-  1.0.0 - Initial version
-```
-
 ## License
 
 All the source code included uses a 3-clause BSD license, see LICENSE for details.
