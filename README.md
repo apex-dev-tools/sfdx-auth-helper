@@ -48,7 +48,9 @@ To start, create an instance of the helper at the path of your sf project.
   * `getDefaultUsername()` - This returns the default org username for a sfdx workspace. If no default username is set it returns undefined. If the default is an org alias that is translated to a username.
   * `reloadConfig()` - If the loaded config has changed due to some external action (e.g. org creation) the copy cached by the core library will be stale. Use this to reload, making a new helper instance will not be enough.
 
-## Building
+## Development
+
+### Building
 
 This project uses the `pnpm` package manager.
 
@@ -70,6 +72,10 @@ To test bundling using webpack:
 ```
 
 This should execute without error.
+
+### Git Hooks
+
+If you encounter difficulties with the installed git hooks, they can be bypassed with `--no-verify`/`-n` flag on commit. To disable them completely (after `install`) use `npx husky uninstall` or the direct command `git config --unset core.hooksPath`.
 
 ## License
 

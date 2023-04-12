@@ -10,8 +10,8 @@ import {
   StateAggregator,
 } from '@salesforce/core';
 import {
-  ConnectionOptions as RawConnectionOptions,
   Connection as RawConnection,
+  ConnectionOptions as RawConnectionOptions,
 } from 'jsforce';
 
 type RefreshTokenFn = (

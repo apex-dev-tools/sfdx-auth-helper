@@ -17,7 +17,6 @@
     "build": "tsc",
     "clean": "rm -rf ./lib/",
     "commit": "cz",
-    "hooks:uninstall": "husky uninstall",
     "lint": "eslint ./src/ --fix",
     "prepare": "husky install",
     "test": "jest --coverage",
