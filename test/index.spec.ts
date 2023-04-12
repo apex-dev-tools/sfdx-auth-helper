@@ -59,17 +59,10 @@ describe('AuthHelper', () => {
   });
 
   it('throws if no default org with no args', async () => {
-    try {
-      const helper = await AuthHelper.instance(workspacePath);
-      await helper.connect();
-    } catch (err) {
-      if (err instanceof Error) {
-        expect(err.message).toMatch('No default username found in org config');
-        return;
-      }
-    }
-
-    throw new Error('should throw username error');
+    const helper = await AuthHelper.instance(workspacePath);
+    await expect(helper.connect()).rejects.toMatchObject(
+      new Error('No default username found in org config')
+    );
   });
 
   it('gets no auth info for bad username', async () => {
