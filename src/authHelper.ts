@@ -110,6 +110,7 @@ export class AuthHelper {
    * Reload sf configs, for example saved usernames and credentials.
    */
   public async reloadConfig(): Promise<void> {
+    StateAggregator.clearInstance();
     await this.config.reload();
   }
 
