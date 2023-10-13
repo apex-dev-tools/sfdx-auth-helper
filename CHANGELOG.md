@@ -1,5 +1,9 @@
 # sfdx-auth-helper - Changelog
 
+## 2.1.0 - 2023-10-13
+
+* Update to `@salesforce/core@^4`.
+
 ## 2.0.1 - 2023-10-12
 
 * Fix `AuthHelper.reloadConfig` not removing stale auth config.

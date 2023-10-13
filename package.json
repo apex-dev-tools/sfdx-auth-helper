@@ -1,6 +1,6 @@
 {
   "name": "@apexdevtools/sfdx-auth-helper",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Salesforce authentication utilities",
   "author": {
     "name": "Apex Dev Tools Team",
@@ -37,7 +37,7 @@
   "homepage": "https://github.com/apex-dev-tools/sfdx-auth-helper#readme",
   "packageManager": "pnpm@8.2.0",
   "dependencies": {
-    "@salesforce/core": "^3.34.6",
+    "@salesforce/core": "^4.3.11",
     "jsforce": "^1.11.0"
   },
   "devDependencies": {
