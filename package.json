@@ -37,7 +37,7 @@
   "homepage": "https://github.com/apex-dev-tools/sfdx-auth-helper#readme",
   "packageManager": "pnpm@8.2.0",
   "dependencies": {
-    "@salesforce/core": "^3.34.6",
+    "@salesforce/core": "^4.3.11",
     "jsforce": "^1.11.0"
   },
   "devDependencies": {
